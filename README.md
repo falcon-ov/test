@@ -1,9 +1,10 @@
-# Зайдите в codespaces
-1. Создайте пустой репозиторий на github
-2. Зайдите на codespaces
-![img](/image1.png)
+# Go to Codespaces
 
-# Запустите готовый образ
+1. Create an empty repository on GitHub
+2. Go to Codespaces
+   ![img](/image1.png)
+
+# Run the ready-made image
 
 ```bash
 docker run -d \
@@ -17,49 +18,54 @@ docker run -d \
   lscr.io/linuxserver/chromium:latest
 ```
 
-# Как пользоваться
-Просто откройте порт 3000 в Codespaces → появится полноценный Chromium браузер в вашем браузере. Можете серфить как обычно. Все данные (cookies, история) сохраняются внутри контейнера, пока вы его не удалите.
+# How to use
+
+Just open port 3000 in Codespaces → a full Chromium browser will appear in your browser. You can browse as usual. All data (cookies, history) is stored inside the container as long as you don’t delete it.
 ![img](/image2.png)
 
-
-# Полезные команды для управления
+# Useful commands for management
 
 ```bash
-# Посмотреть запущенные контейнеры
+# View running containers
 docker ps
 
-# Остановить браузер
+# Stop the browser
 docker stop browser
 
-# Запустить снова
+# Start again
 docker start browser
 
-# Удалить контейнер полностью
+# Remove the container completely
 docker rm -f browser
 
-# Посмотреть логи (если что-то не работает)
+# View logs (if something doesn’t work)
 docker logs browser
 ```
 
-# Что делать, если я закрыл браузер?
+# What if I closed the browser?
 
-Способ 1: Запустить браузер через терминал в контейнере (самый простой)
+Method 1: Start the browser via the terminal inside the container (the simplest)
+
 ```bash
-# Зайдите в контейнер
+# Enter the container
 docker exec -it browser bash
 
-# Запустите Chromium и выйдите из контейнера
+# Start Chromium and exit the container
 chromium --no-sandbox & exit
 ```
-Способ 2: Перезапустите контейнер
-# Перезапуск контейнера - Chromium запустится автоматически
+
+Method 2: Restart the container
+
+# Restart the container — Chromium will start automatically
+
 ```bash
 docker restart browser
 ```
 
-# Преимущества данного вариант (браузер в Codespaces):
-✅ Ничего не устанавливается на рабочий компьютер — нет следов
-✅ Весь трафик выглядит как работа с Codespaces — обычная разработка
-✅ Нет настроек прокси в системе — IT не увидит изменений
-✅ Полная изоляция — всё происходит удалённо
-✅ Легко объяснить — "тестировал веб-приложение в контейнере"
+# Advantages of this option (browser in Codespaces):
+
+✅ Nothing is installed on the work computer — no traces
+✅ All traffic looks like work with Codespaces — normal development
+✅ No proxy settings in the system — IT won’t see any changes
+✅ Full isolation — everything happens remotely
+✅ Easy to explain — “tested a web application in a container”
