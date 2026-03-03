@@ -38,7 +38,7 @@ docker start browser
 # Remove the container completely
 docker rm -f browser
 
-# View logs (if something doesn’t work)
+# View logs (if something doesn’t work) 
 docker logs browser
 ```
 
