@@ -14,7 +14,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/Vienna \
-  --shm-size="2gb" \
+  --shm-size="4gb" \
   lscr.io/linuxserver/chromium:latest
 ```
 
